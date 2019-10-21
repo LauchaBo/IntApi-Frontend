@@ -1,0 +1,17 @@
+.scroll-style {
+  // Gecko - Scrollbar style
+  scrollbar-color: $gray $white;
+  scrollbar-width: thin;
+
+  // Webkit - Scrollbar style
+  &::-webkit-scrollbar {
+    background-color: $white;
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $gray;
+    border: 1px solid $white;
+    border-radius: 3px;
+  }
+}

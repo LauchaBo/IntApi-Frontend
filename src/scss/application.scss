@@ -1,0 +1,33 @@
+@import '~wolox-equalizer/equalizer';
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+
+@import 'variables/colors';
+@import 'variables/sizes';
+
+@import 'common/svg';
+@import 'common/markdown';
+@import 'common/texts';
+@import 'common/buttons';
+@import 'common/margins';
+@import 'common/display';
+@import 'common/forms';
+@import 'common/selects';
+@import 'common/modals';
+@import 'common/tooltips';
+@import 'common/cards';
+@import 'common/scroll';
+
+*,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+span {
+  color: $black;
+  font-family: 'Lato', sans-serif;
+}
