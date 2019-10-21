@@ -1,0 +1,233 @@
+$button-height: 40px;
+
+%button {
+  --fg-color: #{$white};
+  --bg-color: #{$blue};
+  --font-size: 16px;
+  --line-height: 19px;
+
+  align-items: center;
+  background-color: var(--bg-color);
+  border: 2px solid $white;
+  border-radius: 4px;
+  color: var(--fg-color);
+  display: flex;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  height: $button-height;
+  justify-content: center;
+  padding: 0 28px;
+
+  &:disabled {
+    background-color: $light-gray;
+    border: 2px solid $light-gray;
+    color: $dark-gray;
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    @include colorizeIconGPath($dark-gray);
+    background-color: $white;
+    border: 2px solid $blue;
+    color: $dark-gray;
+  }
+
+  &.max-width-none {
+    --max-width: none;
+  }
+}
+
+.primary-button {
+  @extend %button;
+  --max-width: 195px;
+  background-color: $blue;
+  border: 2px solid $blue;
+  color: $white;
+  font-weight: 700;
+  max-width: var(--max-width);
+
+  &:hover:not(:disabled) {
+    background-color: $white;
+    color: $middle-blue;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $middle-blue;
+    border: 2px solid $middle-blue;
+    color: $white;
+  }
+
+  &.white-border {
+    border-color: $white;
+  }
+
+  &.with-icon:hover {
+    @include colorizeIconGPath($middle-blue);
+  }
+}
+
+.secondary-button {
+  @extend %button;
+  --max-width: 195px;
+  background-color: $white;
+  border: 2px solid $blue;
+  color: $blue;
+  font-weight: 700;
+  max-width: var(--max-width);
+
+  &:hover:not(:disabled) {
+    background-color: $middle-blue;
+    border: 2px solid $middle-blue;
+    color: $white;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $white;
+    border: 2px solid $middle-blue;
+    color: $middle-blue;
+  }
+
+  &.with-icon:hover {
+    @include colorizeIconGPath($white);
+    @include colorizeIconGGPath($white);
+    @include colorizeIconGGGPath($white);
+    @include colorizeIcon($white);
+  }
+}
+
+.terciary-button {
+  @extend %button;
+  --max-width: 195px;
+  background-color: $darker-gray;
+  border: 2px solid $darker-gray;
+  color: $white;
+  font-weight: 700;
+  max-width: var(--max-width);
+
+  &:hover:not(:disabled) {
+    background-color: $white;
+    color: $darker-gray;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $white;
+    border: 2px solid $black;
+    color: $black;
+  }
+}
+
+.with-icon {
+  padding: 0 12px;
+}
+
+.icon-button {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+
+  &:hover,
+  &.active {
+    background-color: $light-gray;
+  }
+}
+
+// TODO: Remove this class once it's not used anymore
+.main-button {
+  @extend %button;
+  --max-width: 195px;
+  font-weight: 700;
+  max-width: var(--max-width);
+
+  &.white {
+    --fg-color: #{$blue};
+    --bg-color: #{$white};
+    border: 2px solid var(--fg-color);
+    color: var(--fg-color);
+  }
+
+  &.no-border {
+    border: 0;
+  }
+
+  &:active {
+    color: var(--fg-color); 
+  }
+}
+
+.button-simple {
+  color: $blue;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+
+  &.lowercase {
+    text-transform: none;
+  }
+}
+
+.rating-button {
+  border: 1px solid $gray;
+  border-radius: 18px;
+  box-sizing: border-box;
+  color: $blue;
+  font-family: Lato;
+  font-size: 14px;
+  line-height: 32px;
+  max-width: 170px;
+  padding: 0 20px;
+}
+
+%link-button {
+  --active-color: #{$black};
+
+  &:hover {
+    font-weight: 900;
+  }
+
+  &:active {
+    color: var(--active-color);
+    font-weight: 900;
+  }
+
+  &:disabled {
+    color: $dark-gray;
+    font-weight: 700;
+  }
+
+  &:focus {
+    color: $middle-blue;
+  }
+}
+
+.link-button-black {
+  @extend %link-button;
+  --active-color: #{$blue};
+  color: $black;
+}
+
+.link-button-blue {
+  @extend %link-button;
+  --active-color: #{$black};
+  color: $blue;
+}
+
+.arrow-container {
+  background-color: $white;
+  border: 1px solid $light-gray;
+  border-radius: 100%;
+  box-shadow: 0 2px 8px 0 $shadow-gray;
+  box-sizing: border-box;
+  height: 40px;
+  position: absolute;
+  width: 40px;
+
+  .arrow {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+  }
+}

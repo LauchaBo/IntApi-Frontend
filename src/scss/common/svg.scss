@@ -1,0 +1,130 @@
+@mixin colorizeIcon($newColor) {
+  &.simple-svg-wrapper {
+    .simple-svg {
+      g > path {
+        fill: $newColor;
+      }
+
+      path {
+        color: $newColor;
+      }
+    }
+  }
+}
+
+@mixin colorizeIconGPath($newColor) {
+  .simple-svg-wrapper {
+    .simple-svg > g > path {
+      fill: $newColor;
+    }
+  }
+}
+
+@mixin colorizeIconGGPath($newColor) {
+  .simple-svg-wrapper {
+    .simple-svg > g > g > path {
+      fill: $newColor;
+    }
+  }
+}
+
+@mixin colorizeIconGGGPath($newColor) {
+  .simple-svg-wrapper {
+    .simple-svg > g > g > g > path {
+      fill: $newColor;
+    }
+  }
+}
+
+.active-route {
+  .simple-svg-wrapper {
+    .simple-svg {
+      g > path {
+        fill: $blue;
+      }
+    }
+  }
+}
+
+.black-icon {
+  @include colorizeIcon($black);
+}
+
+.white-icon {
+  @include colorizeIcon($white);
+}
+
+.blue-icon {
+  @include colorizeIcon($blue);
+}
+
+.gray-icon {
+  @include colorizeIcon($gray);
+}
+
+.dark-gray-icon {
+  @include colorizeIcon($dark-gray);
+}
+
+.light-gray-icon {
+  @include colorizeIcon($light-gray);
+}
+
+.red-furious-icon {
+  @include colorizeIcon($red);
+}
+
+.dark-gray-hover-blue {
+  @include colorizeIcon($dark-gray);
+
+  &:hover {
+    @include colorizeIcon($blue);
+  }
+}
+
+.blue-hover-dark-gray {
+  @include colorizeIcon($blue);
+
+   :hover > &,
+   .active > & {
+    @include colorizeIcon($dark-gray);
+  }
+}
+
+.yellow-icon {
+  @include colorizeIconGGGPath($yellow)
+}
+
+.red-icon {
+  .simple-svg {
+    g > use {
+      fill: $red;
+    }
+  }
+}
+
+@mixin strokeColorizeIcon($newColor) {
+  &.simple-svg-wrapper {
+    .simple-svg {
+      path {
+        fill: $newColor;
+      }
+    }
+  }
+}
+
+.white-stroke-icon {
+  @include strokeColorizeIcon($white)
+}
+
+.blue-stroke-icon {
+  @include strokeColorizeIcon($blue)
+}
+
+.hide-title {
+  pointer-events: none;
+}
+
+.simple-svg-wrapper {
+  display: flex;
+}

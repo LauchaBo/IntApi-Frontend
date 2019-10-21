@@ -1,0 +1,159 @@
+// sizes
+.title-xlbig {
+  font-size: 48px;
+  font-weight: 900;  
+  line-height: 57px;
+}
+
+.title-xbig {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 50px;
+}
+
+.title-big {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 44px;
+}
+
+.title-medium {
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: 700;
+}
+
+.title-small {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 600;
+}
+
+.text-xbig {
+  font-size: 24px;
+  line-height: 33px;
+}
+
+.text-big {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.text-normal {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.text-small {
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.text-xsmall {
+  font-size: 11px;
+  line-height: 17px;
+}
+
+// colors
+
+.green {
+  color: $green;
+}
+
+.white {
+  color: $white;
+}
+
+.black {
+  color: $black;
+}
+
+.light-gray {
+  color: $light-gray;
+}
+
+.gray {
+  color: $gray;
+}
+
+.dark-gray {
+  color: $dark-gray;
+}
+
+.blue {
+  color: $blue;
+}
+
+.red {
+  color: $red;
+}
+
+// transforms
+
+.slim {
+  font-weight: 300;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.bolder {
+  font-weight: 900;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.letter-space-1 {
+  letter-spacing: 1.1px;
+}
+
+// displays
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+@media screen and (max-width: $mobile-break) {
+  .title-big {
+    font-size: 20px;
+    line-height: 24px;
+
+    &.text-remain {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+}
+
+.word-break {
+  word-break: break-word;
+}
+
+.characters {
+  text-align: right;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

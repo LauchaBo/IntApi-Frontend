@@ -1,0 +1,212 @@
+.tooltip {
+  display: block !important;
+  z-index: 10000;
+
+  .tooltip-inner {
+    background: black;
+    color: white;
+    border-radius: 16px;
+    padding: 5px 10px 4px;
+  }
+
+  .tooltip-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    margin: 5px;
+    border-color: black;
+    z-index: 100;
+  }
+
+  &[x-placement^="top"] {
+    margin-bottom: 5px;
+
+    .tooltip-arrow {
+      border-width: 5px 5px 0 5px;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      bottom: -5px;
+      left: calc(50% - 5px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &[x-placement^="bottom"] {
+    margin-top: 5px;
+
+    .tooltip-arrow {
+      border-width: 0 5px 5px 5px;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-top-color: transparent !important;
+      top: -5px;
+      left: calc(50% - 5px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &[x-placement^="right"] {
+    margin-left: 5px;
+
+    .tooltip-arrow {
+      border-width: 5px 5px 5px 0;
+      border-left-color: transparent !important;
+      border-top-color: transparent !important;
+      border-bottom-color: transparent !important;
+      left: -5px;
+      top: calc(50% - 5px);
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &[x-placement^="left"] {
+    margin-right: 5px;
+
+    .tooltip-arrow {
+      border-width: 5px 0 5px 5px;
+      border-top-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      right: -5px;
+      top: calc(50% - 5px);
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &.popover {
+    $color: #f9f9f9;
+
+    .popover-inner {
+      background: $color;
+      color: black;
+      padding: 24px;
+      border-radius: 5px;
+      box-shadow: 0 5px 30px rgba(black, .1);
+    }
+
+    .popover-arrow {
+      border-color: $color;
+    }
+  }
+
+  &[aria-hidden='true'] {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .15s, visibility .15s;
+  }
+
+  &[aria-hidden='false'] {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .15s;
+  }
+  
+  &.author-bio-popover {
+    border: 1px solid #F1F2F6;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px 0 $shadow-gray1;
+
+    .popover-inner{
+      padding: 0;
+    }
+
+    .popover-arrow {
+      border-color: $white;
+    }
+
+    &[x-placement^="top"] {
+      margin-bottom: 0;
+  
+      .tooltip-arrow {
+        border-width: 15px 15px 0 15px;
+        bottom: -15px;
+        left: 8% !important;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .popover-arrow {
+        border-color: $light-gray;
+      }
+    }
+
+    &[x-placement^="bottom"] {
+      margin-top: 0;
+  
+      .tooltip-arrow {
+        border-width: 0 15px 15px 15px;
+        top: -15px;
+        left: 19% !important;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &.presentation-tab {
+    &[x-placement^="top"] {
+      .tooltip-arrow {
+        left: 14% !important;
+      }
+    }
+
+    &[x-placement^="bottom"] {
+      .tooltip-arrow {
+        left: 14% !important;
+      }
+    }
+  }
+
+  &.program-author-popover {
+    &[x-placement^="top"] {
+      margin-bottom: 20px;
+  
+      .tooltip-arrow {
+        left: -1% !important;
+        margin: 0 0 20;
+      }
+    }
+
+    &[x-placement^="bottom"] {
+      margin-top: 20px;
+  
+      .tooltip-arrow {
+        left: -1% !important;
+        margin: 20 0 0;
+      }
+    }
+  }
+
+  &.profile-user-tooltip {
+    .tooltip-inner {
+      background-color: $white;
+      border: 1px solid $light-gray;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px 0 $shadow-gray1;
+      color: $dark-gray;
+      font-size: 16px;
+      line-height: 19px;
+      padding: 10px;
+    }
+
+    &[x-placement^="top"] {
+      .tooltip-arrow {
+        border-color: $white;
+        margin: 0 0 2px;
+      }
+    }
+
+    &[x-placement^="bottom"] {
+      .tooltip-arrow {
+        border-color: $white;
+        margin: 2px 0 0;
+      }
+    }
+  }
+}

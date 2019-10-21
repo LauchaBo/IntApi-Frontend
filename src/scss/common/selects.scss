@@ -1,0 +1,14 @@
+.age-option {
+  align-items: center;
+  display: flex;
+
+  &::before {
+    background-color: var(--color);
+    border-radius: 100%;
+    content: '';
+    height: 8px;
+    position: relative;
+    margin-right: 10px;
+    width: 8px;
+  }
+}

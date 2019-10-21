@@ -1,0 +1,39 @@
+$black: #1A1A1A;
+$white: #FFF;
+
+$light-blue: #BED3FF;
+$blue: #6295FF;
+$middle-blue: #4A79DE;
+$dark-blue: #2458C6;
+
+$red: #FF566E;
+
+$green: #00BF7A;
+
+$yellow: #FFD83E;
+
+$lightest-gray: #FAFAFA;
+$lighter-gray: #FCFCFC;
+$light-gray: #F1F2F6;
+$gray: #AAB4C6;
+$dark-gray: #737985;
+$darker-gray: #4D4D4D;
+$shadow-gray: rgba(12, 0, 51, 0.05);
+$shadow-gray1: rgba(12, 0, 51, 0.1);
+$shadow-gray2: rgba(82, 97, 115, 0.18);
+$shadow-blacker: rgba(120, 144, 156, 0.4);
+$shadow-white: rgba(255,255,255,0.8);
+
+$black-translusent: rgba(0, 0, 0, .5);
+$dark-gray-translusent: rgba(0, 0, 0, .3);
+$gray-translusent: rgba(0, 0, 0, 0.18);
+
+// range slider colors
+.classes-range-slider {
+  --dot-color: #{$blue};
+  --process-bar-color: #{$blue};
+  --rail-bar-color: #{$gray};
+  --step-color: #{$middle-blue};
+}
+
+:export { blue: $blue; gray: $gray }
