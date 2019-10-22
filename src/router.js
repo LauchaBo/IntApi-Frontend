@@ -33,12 +33,13 @@ export default new Router({
         import(/* webpackChunkName: "register" */ './views/Register.vue'),
       meta: { isPrivate: false, showOverFooter: true, isResponsive: true },
       props: true
-    },{
+    },
+    {
       path: '/payments',
       name: routes.payments,
       component: () =>
         import(/* webpackChunkName: "payments" */ './views/Payments.vue'),
-      meta: { isPrivate: false, showOverFooter: true, isResponsive: true }
+      meta: { isPrivate: true, showOverFooter: true, isResponsive: true }
     }
   ],
   scrollBehavior () {
