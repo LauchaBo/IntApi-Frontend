@@ -22,10 +22,15 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '../scss/variables/colors';
+@import '../scss/variables/z-indexes';
 
 .navbar {
   padding: 10px;
   border-bottom: 1px solid $gray;
+  position: fixed;
+  width: 100%;
+  z-index: $navbar;
+  background-color: $white;
 }
 
 .icon {
