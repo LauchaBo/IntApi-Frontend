@@ -47,6 +47,13 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "monthlySettlement" */ './views/MonthlySettlement.vue'),
       meta: { isPrivate: false, showOverFooter: true, isResponsive: true }
+    },
+    {
+      path: '/personalHome',
+      name: routes.personalHome,
+      component: () =>
+        import(/* webpackChunkName: "personalHome" */ './views/PersonalHome.vue'),
+      meta: { isPrivate: false, showOverFooter: true, isResponsive: true }
     }
   ],
   scrollBehavior () {
