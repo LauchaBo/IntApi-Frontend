@@ -8,8 +8,7 @@
       input.input-border.name-input.m-bottom-2(
         type='text'
         name='firstName'
-        :value='getFirstName'
-        @input='updateValueVO'
+        @input='updateValue'
         placeholder='Escribe tu nombre'
       )
       label.text-medium.m-bottom-1(v-if="role === 'Personal'")
@@ -17,8 +16,7 @@
       input.input-border.name-input.m-bottom-2(
         type='text'
         name='lastName'
-        :value='getLastName'
-        @input='updateValueVO'
+        @input='updateValue'
         placeholder='Escribe tu apellido'
         v-if="role === 'Personal'"
       )
@@ -27,8 +25,7 @@
       input.input-border.name-input.m-bottom-2(
         type='email'
         name='email'
-        :value='getEmail'
-        @input='updateValueVO'
+        @input='updateValue'
         placeholder='nombre@mail.com'
       )
       label.text-medium.m-bottom-1
@@ -36,8 +33,7 @@
       input.input-border.name-input.m-bottom-2(
         type='text'
         name='birthDate'
-        :value='getBirthDate'
-        @input='updateValueVO'
+        @input='updateValue'
         placeholder='Ingresa tu fecha de nacimiento'
       )
       .column
@@ -48,8 +44,7 @@
       input.input-border.name-input.m-bottom-2(
         type='text'
         name='street'
-        :value='getStreet'
-        @input='updateValueVO'
+        @input='updateValue'
         placeholder='Calle que aparece en tu documento'
       )
       .row.middle.center
@@ -58,8 +53,7 @@
         input.input-border.name-input.m-bottom-2(
           type='text'
           name='streetNumber'
-          :value='getStreetNumber'
-          @input='updateValueVO'
+          @input='updateValue'
           placeholder='1356'
         )
         label.text-medium.m-bottom-1
@@ -67,8 +61,7 @@
         input.input-border.name-input.m-bottom-2(
           type='text'
           name='apartment'
-          :value='getApartment'
-          @input='updateValueVO'
+          @input='updateValue'
           placeholder='5A'
         )
       label.text-medium.m-bottom-1
@@ -76,8 +69,7 @@
       input.input-border.name-input.m-bottom-2(
         type='number'
         name='postalCode'
-        :value='getPostalCode'
-        @input='updateValueVO'
+        @input='updateValue'
         placeholder='Escribe tu código postal'
       )
       label.text-medium.m-bottom-1
@@ -85,8 +77,7 @@
       input.input-border.name-input.m-bottom-2(
         type='text'
         name='country'
-        :value='getCountry'
-        @input='updateValueVO'
+        @input='updateValue'
         placeholder='País de residencia'
       )
       label.text-medium.m-bottom-1
@@ -94,8 +85,7 @@
       input.input-border.name-input.m-bottom-2(
         type='text'
         name='province'
-        :value='getProvince'
-        @input='updateValueVO'
+        @input='updateValue'
         placeholder='Provincia donde vives'
       )
       label.text-medium.m-bottom-1
@@ -103,8 +93,7 @@
       input.input-border.name-input.m-bottom-2(
         type='text'
         name='city'
-        :value='getCity'
-        @input='updateValueVO'
+        @input='updateValue'
         placeholder='Ciudad donde vives'
       )
       label.text-medium.m-bottom-1
@@ -112,8 +101,7 @@
       input.input-border.name-input.m-bottom-2(
         type='text'
         name='phone'
-        :value='getPhone'
-        @input='updateValueVO'
+        @input='updateValue'
         placeholder='0111523658416'
       )
       label.text-medium.m-bottom-1(v-if="role === 'Personal'")
@@ -121,8 +109,7 @@
       input.input-border.name-input.m-bottom-2(
         type='text'
         name='firstName'
-        :value='getFirstName'
-        @input='updateValueVO'
+        @input='updateValue'
         placeholder='Escribe tu nombre'
         v-if="role === 'Personal'"
       )
@@ -131,8 +118,7 @@
       input.input-border.name-input.m-bottom-2(
         type='password'
         name='password'
-        :value='getPassword'
-        @input='updateValueVO'
+        @input='updateValue'
         placeholder='Escribe tu contraseña'
       )
       label.text-medium.m-bottom-1
@@ -140,8 +126,7 @@
       input.input-border.name-input.m-bottom-2(
         type='password'
         name='confirmPassword'
-        :value='getConfirmPassword'
-        @input='updateValueVO'
+        @input='updateValue'
         placeholder='Repite la contraseña'
       )
       button.main-button.self-end(type='button' @click='registerUser')
@@ -149,11 +134,18 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
+import { mapActions } from 'vuex'
 
-    }
+export default {
+  methods: {
+    ...mapActions([
+      'changeNewUserField',
+      'changeNewUserVOField'
+    ]),
+    updateValue(e) {
+      this.changeNewUserField({ field: e.target.name, value: e.target.value })
+    },
+    registerUser() {}
   },
   props: { 
     role: { type: String, required: true, default: 'Personal' } 
