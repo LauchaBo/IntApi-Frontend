@@ -1,6 +1,7 @@
 <template lang="pug">
-  .app-container(:class='{ "block-scroll": isModalOpen }')
+  .app-container
     navbar
+    router-view.main-container
 </template>
 
 <script>

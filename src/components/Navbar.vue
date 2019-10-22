@@ -5,15 +5,9 @@
         img.icon.m-right-1(src='../assets/logo.png' alt='Kimple')
         span.title-big
           | CreditAr
-    button.main-button(type='button')
+    router-link.main-button(type='button' :to='"/login"')
       | Ingresar
 </template>
-
-<script>
-export default {
-  
-}
-</script>
 
 <style lang="scss" scoped>
 @import '../scss/variables/colors';
