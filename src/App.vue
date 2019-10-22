@@ -19,6 +19,7 @@ export default {
 .main-container {
   min-height: calc(100vh - #{$footer-height});
   padding-top: $navbar-height;
+  width: 100%;
 }
 
 .block-scroll {

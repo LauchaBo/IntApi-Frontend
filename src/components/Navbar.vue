@@ -1,6 +1,6 @@
 <template lang="pug">
   nav.navbar.row.space-between.middle
-    router-link(:to='"/landing"')
+    router-link(:to='{ name: routes.landing }')
       .row.center.middle
         img.icon.m-right-1(src='../assets/logo.png' alt='Kimple')
         span.title-big
@@ -9,6 +9,17 @@
       | Ingresar
 </template>
 
+<script>
+import { routes } from '../router'
+
+export default {
+  data() {
+    return {
+      routes
+    }
+  }
+}
+</script>
 <style lang="scss" scoped>
 @import '../scss/variables/colors';
 

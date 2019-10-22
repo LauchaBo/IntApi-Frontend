@@ -19,12 +19,12 @@
       )
       .row.middle.center
         .radio.m-right-1
-          input.radio-input(type='radio' name='role' v-model='role' :value='"Particular"')
+          input.radio-input(type='radio' name='role' v-model='role' :value='"Personal"')
           .radio-fill
         label.text-small.m-right-2
           | Soy particular
         .radio.m-right-1
-          input.radio-input(type='radio' name='role' v-model='role' :value='"Empresa"')
+          input.radio-input(type='radio' name='role' v-model='role' :value='"Business"')
           .radio-fill
         label.text-small
           | Soy empresa
