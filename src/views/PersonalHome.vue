@@ -2,9 +2,11 @@
   .login-container.column.center
     router-link.main-button(:to='{ name: routes.landing }')
       | Volver
-    <b-jumbotron header="Estado personal" class="mx-5">
-      <b-button variant="primary" href="#">Aumentar mis límites</b-button>
-    </b-jumbotron>
+    .jumbotron
+      h1.title-xbig
+        | Estado personal
+      router-link.main-button(:to='{ name: routes.landing }')
+        | Aumentar mis límites &raquo
     .row
       .column.m-right-5
         | Consumos mensuales: ${{monthlyExpenses}}
@@ -36,6 +38,5 @@ export default {
       routes
     }
   }
-
 }
 </script>
