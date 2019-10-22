@@ -4,7 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export const routes = {
-  home: 'home'
+  landing: 'landing'
 }
 
 export default new Router({
@@ -12,9 +12,9 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: routes.home,
+      name: routes.landing,
       component: () =>
-        import(/* webpackChunkName: "home" */ './views/Home.vue'),
+        import(/* webpackChunkName: "landing" */ './views/Landing.vue'),
       meta: { isPrivate: false, showOverFooter: true, isResponsive: true }
     }
   ],
