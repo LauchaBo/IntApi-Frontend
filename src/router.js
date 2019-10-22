@@ -5,7 +5,8 @@ Vue.use(Router)
 
 export const routes = {
   landing: 'landing',
-  login: 'login'
+  login: 'login',
+  register: 'register'
 }
 
 export default new Router({
@@ -24,6 +25,14 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "login" */ './views/Login.vue'),
       meta: { isPrivate: false, showOverFooter: true, isResponsive: true }
+    },
+    {
+      path: '/register',
+      name: routes.register,
+      component: () =>
+        import(/* webpackChunkName: "register" */ './views/Register.vue'),
+      meta: { isPrivate: false, showOverFooter: true, isResponsive: true },
+      props: true
     }
   ],
   scrollBehavior () {
