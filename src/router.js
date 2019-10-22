@@ -42,11 +42,11 @@ export default new Router({
       meta: { isPrivate: true, showOverFooter: true, isResponsive: true }
     },
     {
-      path: '/monthlysettlement',
-      name: routes.monthlysettlement,
+      path: '/monthlySettlement',
+      name: routes.monthlySettlement,
       component: () =>
-        import(/* webpackChunkName: "monthlysettlement" */ './views/MonthlySettlement.vue'),
-      meta: { isPrivate: true, showOverFooter: true, isResponsive: true }
+        import(/* webpackChunkName: "monthlySettlement" */ './views/MonthlySettlement.vue'),
+      meta: { isPrivate: false, showOverFooter: true, isResponsive: true }
     }
   ],
   scrollBehavior () {
