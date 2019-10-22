@@ -1,6 +1,15 @@
 <template lang="pug">
   .app-container(:class='{ "block-scroll": isModalOpen }')
+    navbar
 </template>
+
+<script>
+import Navbar from '@/components/Navbar'
+
+export default {
+  components: { Navbar }  
+}
+</script>
 
 <style lang="scss">
 @import './scss/application';
