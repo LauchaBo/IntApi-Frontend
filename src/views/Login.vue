@@ -1,5 +1,5 @@
 <template lang="pug">
-  .login-container.column.center.middle
+  .column.center.middle
     .login.column.start.middle
       h1.title-medium.m-bottom-3
         | Iniciar sesión
@@ -45,10 +45,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.login-container {
-  width: 100%;
-}
-
 .login {
   min-width: 500px;
 }
