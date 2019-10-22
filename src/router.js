@@ -40,6 +40,13 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "payments" */ './views/Payments.vue'),
       meta: { isPrivate: true, showOverFooter: true, isResponsive: true }
+    },
+    {
+      path: '/monthlySettlement',
+      name: routes.monthlySettlement,
+      component: () =>
+        import(/* webpackChunkName: "monthlySettlement" */ './views/MonthlySettlement.vue'),
+      meta: { isPrivate: false, showOverFooter: true, isResponsive: true }
     }
   ],
   scrollBehavior () {

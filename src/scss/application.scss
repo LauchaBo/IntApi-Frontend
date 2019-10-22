@@ -4,7 +4,6 @@
 
 @import 'variables/colors';
 @import 'variables/sizes';
-
 @import 'common/svg';
 @import 'common/markdown';
 @import 'common/texts';
@@ -17,6 +16,9 @@
 @import 'common/tooltips';
 @import 'common/cards';
 @import 'common/scroll';
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
 
 *,
 h1,
