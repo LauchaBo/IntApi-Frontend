@@ -46,6 +46,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import router, { routes } from '../router'
 
 export default {
   methods: {
@@ -57,7 +58,8 @@ export default {
       this.changeUserInfoField({ field: e.target.name, value: e.target.value })
     },
     loginUser() {
-      this.login()
+      router.push({ name: routes.homeBusiness })
+      // this.login()
     }
   }
 }

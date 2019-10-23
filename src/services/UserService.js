@@ -11,3 +11,8 @@ export const logoutUser = () => {
   store.dispatch('logout')
   router.push(routes.home)
 }
+
+export const registerUser = async (params) => {
+  const response = await api.post(`/Register`, params)
+  return response
+}

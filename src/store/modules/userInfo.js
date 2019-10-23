@@ -1,4 +1,4 @@
-import { loginUser } from '../../services/UserService'
+import { loginUser, registerUser } from '../../services/UserService'
 
 import { isError } from '../../utils/api'
 import router, { routes } from '../../router'
@@ -7,7 +7,23 @@ export default {
   state: {
     userInfo: {},
     userLoggedIn: false,
-    newUser: {}
+    newUser: {
+      name: '',
+      lastName: '',
+      customerId: '',
+      businessId: '',
+      email: '',
+      dateBirth: '',
+      street: '',
+      number: '',
+      apartment: '',
+      postalCode: '',
+      country: '',
+      province: '',
+      city: '',
+      phone: '',
+      income: '',
+      password: ''}
   },
 
   mutations: {
@@ -43,7 +59,7 @@ export default {
           commit('loginUser')
           if (type === 'Personal')
             router.push(routes.homePersonal)
-          else
+          else (type === 'Business')
             router.push(routes.homeBusiness)
         }
       } catch (error) {
@@ -53,5 +69,20 @@ export default {
     logout({ commit }) {
       commit('logoutUser')
     },
+    async register({ commit }) {
+      let type = this.state.userInfo.newUser.type
+      try {
+        const response = await registerUser(this.state.userInfo.newUser)
+        if (!isError(response.status)) {
+          commit('loginUser')
+          if (type === 'Personal')
+            router.push(routes.homePersonal)
+          else (type === 'Business')
+            router.push(routes.homeBusiness)
+        }
+      } catch (error) {
+        console.log(error.response)
+      }
+    }
   }
 }
