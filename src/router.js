@@ -9,8 +9,8 @@ export const routes = {
   register: 'register',
   payments: 'payments',
   monthlySettlement: 'monthlySettlement',
-  personalHome: 'personalHome',
-  businessHome: 'businessHome',
+  homePersonal: 'homePersonal',
+  homeBusiness: 'homeBusiness',
   raiseLimits: 'raiseLimits'
 }
 
