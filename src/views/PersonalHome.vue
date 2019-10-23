@@ -5,7 +5,7 @@
     .jumbotron
       h1.title-xbig
         | Estado personal
-      router-link.main-button(:to='{ name: routes.landing }')
+    router-link.main-button(:to='{ name: routes.raiseLimits }')
         | Aumentar mis límites &raquo
     .row
       .column.m-right-5

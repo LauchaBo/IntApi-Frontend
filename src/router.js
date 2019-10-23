@@ -6,7 +6,12 @@ Vue.use(Router)
 export const routes = {
   landing: 'landing',
   login: 'login',
-  register: 'register'
+  register: 'register',
+  payments: 'payments',
+  monthlySettlement: 'monthlySettlement',
+  personalHome: 'personalHome',
+  businessHome: 'businessHome',
+  raiseLimits: 'raiseLimits'
 }
 
 export default new Router({
@@ -53,6 +58,13 @@ export default new Router({
       name: routes.personalHome,
       component: () =>
         import(/* webpackChunkName: "personalHome" */ './views/PersonalHome.vue'),
+      meta: { isPrivate: false, showOverFooter: true, isResponsive: true }
+    },
+    {
+      path: '/businessHome',
+      name: routes.businessHome,
+      component: () =>
+        import(/* webpackChunkName: "businessHome" */ './views/BusinessHome.vue'),
       meta: { isPrivate: false, showOverFooter: true, isResponsive: true }
     },
     {
