@@ -8,9 +8,8 @@
       .column.m-right-5
         .row
           | Operaciones mensuales: {{quantityOfMonthlySales}}
-      .column.m-right-5
     h1.title-big.self-start.m-bottom-5.m-top-5
-     | Historial de ventas
+      | Historial de ventas
     b-table(striped hover :items='sales')
 </template>
 
