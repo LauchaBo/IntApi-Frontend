@@ -70,14 +70,16 @@ export default {
       commit('logoutUser')
     },
     async register({ commit }) {
-      let type = this.state.userInfo.newUser.type
+      let newUser = this.state.userInfo.newUser
       try {
         const response = await registerUser(this.state.userInfo.newUser)
         if (!isError(response.status)) {
+          commit('changeUserInfoField', { field: 'email', value: newUser.email })
+          commit('changeUserInfoField', { field: 'type', value: newUser.type })
           commit('loginUser')
-          if (type === 'Personal')
+          if (newUser.type === 'Personal')
             router.push(routes.homePersonal)
-          else (type === 'Business')
+          else if (newUser.type === 'Business')
             router.push(routes.homeBusiness)
         }
       } catch (error) {
