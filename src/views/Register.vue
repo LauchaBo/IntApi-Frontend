@@ -7,7 +7,7 @@
         | Nombre
       input.input-border.name-input.m-bottom-2(
         type='text'
-        name='firstName'
+        name='name'
         @input='updateValue'
         placeholder='Escribe tu nombre'
       )
@@ -19,6 +19,24 @@
         @input='updateValue'
         placeholder='Escribe tu apellido'
         v-if="role === 'Personal'"
+      )
+      label.text-medium.m-bottom-1(v-if="role === 'Personal'")
+        | DNI
+      input.input-border.name-input.m-bottom-2(
+        type='number'
+        name='customerId'
+        @input='updateValue'
+        placeholder='32458761'
+        v-if="role === 'Personal'"
+      )
+      label.text-medium.m-bottom-1(v-if="role === 'Business'")
+        | CUIT
+      input.input-border.name-input.m-bottom-2(
+        type='number'
+        name='businessId'
+        @input='updateValue'
+        placeholder='3025478522'
+        v-if="role === 'Business'"
       )
       label.text-medium.m-bottom-1
         | Email
@@ -32,7 +50,7 @@
         | Fecha de nacimiento
       input.input-border.name-input.m-bottom-2(
         type='text'
-        name='birthDate'
+        name='dateBirth'
         @input='updateValue'
         placeholder='Ingresa tu fecha de nacimiento'
       )
@@ -52,7 +70,7 @@
           | Número
         input.input-border.name-input.m-bottom-2(
           type='text'
-          name='streetNumber'
+          name='number'
           @input='updateValue'
           placeholder='1356'
         )
@@ -107,8 +125,8 @@
       label.text-medium.m-bottom-1(v-if="role === 'Personal'")
         | Ingresos
       input.input-border.name-input.m-bottom-2(
-        type='text'
-        name='firstName'
+        type='number'
+        name='income'
         @input='updateValue'
         placeholder='Escribe tu nombre'
         v-if="role === 'Personal'"
@@ -139,8 +157,7 @@ import { mapActions } from 'vuex'
 export default {
   methods: {
     ...mapActions([
-      'changeNewUserField',
-      'changeNewUserVOField'
+      'changeNewUserField'
     ]),
     updateValue(e) {
       this.changeNewUserField({ field: e.target.name, value: e.target.value })
