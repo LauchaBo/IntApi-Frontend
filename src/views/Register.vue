@@ -147,7 +147,7 @@
         @input='updateValue'
         placeholder='Repite la contraseña'
       )
-      button.main-button.self-end(type='button' @click='registerUser')
+      button.main-button.self-end(type='button' @click='saveRegister')
         | Guardar
 </template>
 
@@ -157,16 +157,20 @@ import { mapActions } from 'vuex'
 export default {
   methods: {
     ...mapActions([
-      'changeNewUserField'
+      'changeNewUserField',
+      'register'
     ]),
     updateValue(e) {
       this.changeNewUserField({ field: e.target.name, value: e.target.value })
     },
-    registerUser() {}
+    saveRegister() {
+      this.changeNewUserField({ field: 'type', value: this.role })
+      this.register()
+    }
   },
   props: { 
     role: { type: String, required: true, default: 'Personal' } 
-  }  
+  }
 }
 </script>
 

@@ -9,8 +9,8 @@ export const routes = {
   register: 'register',
   payments: 'payments',
   monthlySettlement: 'monthlySettlement',
-  personalHome: 'personalHome',
-  businessHome: 'businessHome',
+  homePersonal: 'homePersonal',
+  homeBusiness: 'homeBusiness',
   raiseLimits: 'raiseLimits'
 }
 
@@ -44,7 +44,7 @@ export default new Router({
       name: routes.payments,
       component: () =>
         import(/* webpackChunkName: "payments" */ './views/Payments.vue'),
-      meta: { isPrivate: true, showOverFooter: true, isResponsive: true }
+      meta: { isPrivate: false, showOverFooter: true, isResponsive: true }
     },
     {
       path: '/monthlySettlement',
@@ -65,13 +65,6 @@ export default new Router({
       name: routes.homeBusiness,
       component: () =>
         import(/* webpackChunkName: "homeBusiness" */ './views/HomeBusiness.vue'),
-      meta: { isPrivate: false, showOverFooter: true, isResponsive: true }
-    },
-    {
-      path: '/businessHome',
-      name: routes.businessHome,
-      component: () =>
-        import(/* webpackChunkName: "businessHome" */ './views/BusinessHome.vue'),
       meta: { isPrivate: false, showOverFooter: true, isResponsive: true }
     },
     {
