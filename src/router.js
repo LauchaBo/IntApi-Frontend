@@ -54,10 +54,17 @@ export default new Router({
       meta: { isPrivate: false, showOverFooter: true, isResponsive: true }
     },
     {
-      path: '/personalHome',
-      name: routes.personalHome,
+      path: '/homePersonal',
+      name: routes.homePersonal,
       component: () =>
-        import(/* webpackChunkName: "personalHome" */ './views/PersonalHome.vue'),
+        import(/* webpackChunkName: "homePersonal" */ './views/HomePersonal.vue'),
+      meta: { isPrivate: false, showOverFooter: true, isResponsive: true }
+    },
+    {
+      path: '/homeBusiness',
+      name: routes.homeBusiness,
+      component: () =>
+        import(/* webpackChunkName: "homeBusiness" */ './views/HomeBusiness.vue'),
       meta: { isPrivate: false, showOverFooter: true, isResponsive: true }
     },
     {

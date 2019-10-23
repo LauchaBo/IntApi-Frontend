@@ -7,38 +7,57 @@
         | Correo electrónico
       input.input-border.m-bottom-2(
         type='mail'
-        v-model='email'
+        name='email'
         placeholder='nombre@mail.com'
+        @input='updateValue'
       )
       p.text-big.m-bottom-1
         | Contraseña
       input.input-border.m-bottom-2(
         type='password'
-        v-model='password'
+        name='password'
         placeholder='Ingresa tu contraseña'
+        @input='updateValue'
       )
       .row.middle.center
         .radio.m-right-1
-          input.radio-input(type='radio' name='role' v-model='role' :value='"Personal"')
+          input.radio-input(
+            type='radio'
+            name='type'
+            :value='"Personal"'
+            @click='updateValue'
+          )
           .radio-fill
         label.text-small.m-right-2
           | Soy particular
         .radio.m-right-1
-          input.radio-input(type='radio' name='role' v-model='role' :value='"Business"')
+          input.radio-input(
+            type='radio'
+            name='type'
+            :value='"Business"'
+            @click='updateValue'
+          )
           .radio-fill
         label.text-small
           | Soy empresa
-      button.main-button.self-end(type='button')
+      button.main-button.self-end(type='button' @click='loginUser')
         | Ingresar
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
-  data() {
-    return {
-      email: '',
-      password: '',
-      role: ''
+  methods: {
+    ...mapActions([
+      'changeUserInfoField',
+      'login'
+    ]),
+    updateValue(e) {
+      this.changeUserInfoField({ field: e.target.name, value: e.target.value })
+    },
+    loginUser() {
+      this.login()
     }
   }
 }
