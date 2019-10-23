@@ -79,7 +79,7 @@ export default {
           commit('loginUser')
           if (newUser.type === 'Personal')
             router.push(routes.homePersonal)
-          else (newUser.type === 'Business')
+          else if (newUser.type === 'Business')
             router.push(routes.homeBusiness)
         }
       } catch (error) {
