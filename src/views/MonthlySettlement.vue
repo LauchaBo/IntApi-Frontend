@@ -5,7 +5,21 @@
     .login.column.start.middle
       h1.title-xbig
         | Estado actual
-      b-table(striped hover :items='customers')
+    table.headColor
+      tr
+        th
+        | Nombre
+        th
+        | DNI
+        th
+        | Monto ($)
+      tr(v-for='customer in customers').bodyColor
+        td
+        | {{customer.name}}
+        td
+        | {{customer.dni}}
+        td
+        | {{customer.amount}}
 </template>
 
 <script>
@@ -24,3 +38,36 @@ export default {
   }
 }
 </script>
+
+
+<style lang="scss" scoped>
+th {
+  padding: 15px;
+  font-weight: bold;
+}
+td{
+  padding: 15px;
+}
+table{
+  width: 100%;
+  margin-top: 100px;
+}
+
+.headColor{
+background-color: #9D9D9D;
+color: white;
+font-weight: bold;
+}
+
+.bodyColor{
+  background-color:#E3E3E3 ;
+}
+
+tr {
+  font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+tr:hover{
+  background-color: #9D9D9D;
+}
+</style>

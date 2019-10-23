@@ -18,7 +18,23 @@
       .column.m-right-5
     h1.title-big.self-start.m-bottom-5.m-top-5
      | Historial de consumo
-    b-table(striped hover :items='customers')
+    //b-table(striped hover :items='customers')
+    table.headColor
+      tr
+        th
+        | Fecha
+        th
+        | Descripción
+        th
+        | Monto ($)
+      tr(v-for='customer in customers').bodyColor
+        td
+        | {{customer.date}}
+        td
+        | {{customer.place}}
+        td
+        | {{customer.amount}}
+
 </template>
 
 <script>
@@ -28,9 +44,9 @@ export default {
   data() {
     return {
       customers: [
-        { Fecha: '20/11/2019', Establecimiento: 'Cafe Martínez', Monto: 122333 },
-        { Fecha: '05/10/2019', Establecimiento: 'Subway', Monto: 45765 },
-        { Fecha: '01/10/2019', Establecimiento: 'Super de los chicos', Monto: 1234}
+        { date: '20/11/2019', place: 'Cafe Martínez', amount: 122333 },
+        { date: '05/10/2019', place: 'Subway', amount: 45765 },
+        { date: '01/10/2019', place: 'Super de los chicos', amount: 1234}
       ],
       installmentsLimit: 10000,
       totalLimit: 15000,
@@ -40,3 +56,34 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+th {
+  padding: 15px;
+  font-weight: bold;
+}
+td{
+  padding: 15px;
+}
+table{
+  width: 100%;
+}
+
+.headColor{
+background-color: #9D9D9D;
+color: white;
+font-weight: bold;
+}
+
+.bodyColor{
+  background-color:#E3E3E3 ;
+}
+
+tr {
+  font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+tr:hover{
+  background-color: #9D9D9D;
+}
+</style>
