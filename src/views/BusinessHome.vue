@@ -2,43 +2,50 @@
   .login-container.column.center
     router-link.main-button(:to='{ name: routes.landing }')
       | Volver
-    .login.column.start.middle
+    .jumbotron
       h1.title-xbig
-        | Estado actual
+        | Total de ventas mensuales: ${{monthlySales}}
+      .column.m-right-5
+        .row
+          | Operaciones mensuales: {{quantityOfMonthlySales}}
+    h1.title-big.self-start.m-bottom-5.m-top-5
+      | Historial de ventas
+    //b-table(striped hover :items='sales')
     table.headColor
       tr
         th
-        | Nombre
+        | Fecha
         th
-        | DNI
+        | Comprador
         th
         | Monto ($)
-      tr(v-for='customer in customers').bodyColor
+      tr(v-for='sale in sales').bodyColor
         td
-        | {{customer.name}}
+        | {{sale.date}}
         td
-        | {{customer.dni}}
+        | {{sale.buyer}}
         td
-        | {{customer.amount}}
+        | {{sale.amount}}
+
 </template>
 
 <script>
 import { routes } from '../router'
-
 export default {
   data() {
     return {
-      customers: [
-        { name: 'Damian Agasi', dni: '12345788', amount: 1000 },
-        { name: 'Fernando Imparato', dni: '987655', amount: 543234 },
-        { name: 'Damian Agasi', dni: '12345788', amount: 1000}
+      sales: [
+        { date: '20/11/2019', buyer: 'Persona A', amount: 5000 },
+        { date: '05/10/2019', buyer: 'Persona B cuota 1/6', amount: 300 },
+        { date: '01/10/2019', buyer: 'Persona C', amount: 1234 }
       ],
+      quantityOfMonthlySales: 153,
+      monthlySales: 30000,
       routes
     }
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
 th {
@@ -50,7 +57,6 @@ td{
 }
 table{
   width: 100%;
-  margin-top: 100px;
 }
 
 .headColor{
