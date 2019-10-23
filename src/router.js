@@ -6,7 +6,9 @@ Vue.use(Router)
 export const routes = {
   landing: 'landing',
   login: 'login',
-  register: 'register'
+  register: 'register',
+  homePersonal: 'homePersonal',
+  homeBusiness: 'homeBusiness'
 }
 
 export default new Router({
