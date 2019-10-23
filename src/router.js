@@ -54,6 +54,13 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "personalHome" */ './views/PersonalHome.vue'),
       meta: { isPrivate: false, showOverFooter: true, isResponsive: true }
+    },
+    {
+      path: '/raiseLimits',
+      name: routes.raiseLimits,
+      component: () =>
+        import(/* webpackChunkName: "raiseLimits" */ './views/RaiseLimits.vue'),
+      meta: { isPrivate: false, showOverFooter: true, isResponsive: true }
     }
   ],
   scrollBehavior () {
