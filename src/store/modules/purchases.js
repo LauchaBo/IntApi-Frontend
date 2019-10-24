@@ -8,8 +8,8 @@ export default {
   },
 
   mutations: {
-    setData(state, { field, data }) {
-      state[field] = data
+    setMonthlySettlement(state, data) {
+      state.monthlySettlement = data
     }
   },
 
@@ -19,7 +19,7 @@ export default {
       if (isError(response.status))
         console.log(response)
       else
-        commit('setData', { field: 'monthlySettlement', data: response.data })
+        commit('setMonthlySettlement', response.data)
     }
   }
 }

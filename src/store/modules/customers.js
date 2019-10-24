@@ -9,8 +9,11 @@ export default {
   },
 
   mutations: {
-    setData(state, { field, data }) {
-      state[field] = data
+    setHomePersonal(state, data) {
+      state.homePersonal = data
+    },
+    setHomeBusiness(state, data) {
+      state.homeBusiness = data
     }
   },
 
@@ -20,14 +23,14 @@ export default {
       if (isError(response.status))
         console.log(response)
       else
-        commit('setData', { field: 'homePersonal', data: response.data })
+        commit('setHomePersonal', response.data)
     },
     async hydrateHomeBusiness({ commit }) {
       const response = await getHomeBusinessData()
       if (isError(response.status))
         console.log(response)
       else
-        commit('setData', { field: 'homeBusiness', data: response.data })
+        commit('setHomeBusiness', response.data)
     }
   }
 }

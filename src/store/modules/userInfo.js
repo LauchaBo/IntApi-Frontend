@@ -7,7 +7,6 @@ export default {
   state: {
     userInfo: {},
     userLoggedIn: false,
-    homePersonal: {},
     newUser: {
       name: '',
       lastName: '',
@@ -64,7 +63,7 @@ export default {
           commit('loginUser')
           if (type === 'Personal')
             router.push(routes.homePersonal)
-          else (type === 'Business')
+          else if (type === 'Business')
             router.push(routes.homeBusiness)
         }
       } catch (error) {
