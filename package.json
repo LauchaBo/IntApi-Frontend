@@ -12,7 +12,8 @@
     "lint-fix": "vue-cli-service lint --fix",
     "deploy-dev": "npm run dev-build && aws-deploy -p /dist",
     "deploy-stage": "npm run stage-build && aws-deploy -e stage -p /dist",
-    "deploy-prod": "npm run prod-build && aws-deploy -e production -p /dist"
+    "deploy-prod": "npm run prod-build && aws-deploy -e production -p /dist",
+    "web": "npm run dev-build"
   },
   "dependencies": {
     "@vue/eslint-config-prettier": "^5.0.0",
