@@ -7,6 +7,7 @@ export default {
   state: {
     userInfo: {},
     userLoggedIn: false,
+    homePersonal: {},
     newUser: {
       name: '',
       lastName: '',
@@ -43,6 +44,9 @@ export default {
     setUserInfo(state, info) {
       state.userInfo = info
     },
+    setData(state, { field, data }) {
+      state[field] = data
+    }
   },
 
   actions: {

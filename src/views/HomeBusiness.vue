@@ -4,45 +4,53 @@
       | Volver
     .jumbotron
       h1.title-xbig
-        | Total de ventas mensuales: ${{monthlySales}}
+        | Total de ventas mensuales: ${{ homeBusiness.total }}
       .column.m-right-5
         .row
-          | Operaciones mensuales: {{quantityOfMonthlySales}}
+          | Operaciones mensuales: {{ homeBusiness.sales }}
     h1.title-big.self-start.m-bottom-5.m-top-5
       | Historial de ventas
-    //b-table(striped hover :items='sales')
     table.headColor
       tr
         th
         | Fecha
         th
-        | Comprador
+        | Número de tarjeta
         th
         | Monto ($)
-      tr(v-for='sale in sales').bodyColor
+      tr(v-for='sale in homeBusiness.payments').bodyColor
         td
-        | {{sale.date}}
+        | {{ sale.date }}
         td
-        | {{sale.buyer}}
+        | {{ sale.cardNumber }}
         td
-        | {{sale.amount}}
+        | {{ sale.price }}
 
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
+
 import { routes } from '../router'
+
 export default {
   data() {
     return {
-      sales: [
-        { date: '20/11/2019', buyer: 'Persona A', amount: 5000 },
-        { date: '05/10/2019', buyer: 'Persona B cuota 1/6', amount: 300 },
-        { date: '01/10/2019', buyer: 'Persona C', amount: 1234 }
-      ],
-      quantityOfMonthlySales: 153,
-      monthlySales: 30000,
       routes
     }
+  },
+  created() {
+    this.hydrateHomeBusiness()
+  },
+  computed: {
+    ...mapState({
+      homeBusiness: state => state.customers.homeBusiness
+    })
+  },
+  methods: {
+    ...mapActions([
+      'hydrateHomeBusiness'
+    ])
   }
 }
 </script>

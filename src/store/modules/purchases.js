@@ -1,4 +1,4 @@
-import { getMonthlySettlement } from "../../services/PurchasesService"
+import { getMonthlySettlement } from "../../services/PurchaseService"
 
 import { isError } from '../../utils/api'
 

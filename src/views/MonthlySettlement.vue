@@ -15,11 +15,11 @@
         | Monto ($)
       tr(v-for='customer in monthlySettlement').bodyColor
         td
-        | {{customer.name}}
+        | {{ customer.name }}
         td
-        | {{customer.id}}
+        | {{ customer.id }}
         td
-        | {{customer.amount}}
+        | {{ customer.amount }}
 </template>
 
 <script>
@@ -30,11 +30,6 @@ import { routes } from '../router'
 export default {
   data() {
     return {
-      customers: [
-        { name: 'Damian Agasi', dni: '12345788', amount: 1000 },
-        { name: 'Fernando Imparato', dni: '987655', amount: 543234 },
-        { name: 'Damian Agasi', dni: '12345788', amount: 1000}
-      ],
       routes
     }
   },
