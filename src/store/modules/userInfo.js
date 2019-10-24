@@ -42,9 +42,6 @@ export default {
     },
     setUserInfo(state, info) {
       state.userInfo = info
-    },
-    setData(state, { field, data }) {
-      state[field] = data
     }
   },
 
