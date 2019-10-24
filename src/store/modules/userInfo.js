@@ -23,7 +23,8 @@ export default {
       city: '',
       phone: '',
       income: '',
-      password: ''}
+      password: ''
+    }
   },
 
   mutations: {
