@@ -9,16 +9,15 @@
         | Aumentar mis límites &raquo
     .row
       .column.m-right-5
-        | Consumos mensuales: ${{monthlyExpenses}}
+        | Consumos mensuales: ${{ homePersonal.total }}
       .column.m-right-5
         .row
-          | Límite total: ${{totalLimit}}
+          | Límite total: ${{ homePersonal.limit }}
         .row 
-          | Límite en cuotas: ${{installmentsLimit}}
+          | Límite en cuotas: ${{ homePersonal.financiedlimit }}
       .column.m-right-5
     h1.title-big.self-start.m-bottom-5.m-top-5
      | Historial de consumo
-    //b-table(striped hover :items='customers')
     table.headColor
       tr
         th
@@ -27,32 +26,39 @@
         | Descripción
         th
         | Monto ($)
-      tr(v-for='customer in customers').bodyColor
+      tr(v-for='payment in homePersonal.payments').bodyColor
         td
-        | {{customer.date}}
+        | {{ payment.date }}
         td
-        | {{customer.place}}
+        | {{ payment.description }}
         td
-        | {{customer.amount}}
+        | {{ payment.price }}
 
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
+
 import { routes } from '../router'
 
 export default {
   data() {
     return {
-      customers: [
-        { date: '20/11/2019', place: 'Cafe Martínez', amount: 122333 },
-        { date: '05/10/2019', place: 'Subway', amount: 45765 },
-        { date: '01/10/2019', place: 'Super de los chicos', amount: 1234}
-      ],
-      installmentsLimit: 10000,
-      totalLimit: 15000,
-      monthlyExpenses: 20000,
       routes
     }
+  },
+  created() {
+    this.hydrateHomePersonal()
+  },
+  computed: {
+    ...mapState({
+      homePersonal: state => state.customers.homePersonal
+    })
+  },
+  methods: {
+    ...mapActions([
+      'hydrateHomePersonal'
+    ])
   }
 }
 </script>

@@ -1,4 +1,4 @@
-import { getMonthlySettlement } from "../../services/PurchasesService"
+import { getMonthlySettlement } from "../../services/PurchaseService"
 
 import { isError } from '../../utils/api'
 
@@ -8,8 +8,8 @@ export default {
   },
 
   mutations: {
-    setData(state, { field, data }) {
-      state[field] = data
+    setMonthlySettlement(state, data) {
+      state.monthlySettlement = data
     }
   },
 
@@ -19,7 +19,7 @@ export default {
       if (isError(response.status))
         console.log(response)
       else
-        commit('setData', { field: 'monthlySettlement', data: response.data })
+        commit('setMonthlySettlement', response.data)
     }
   }
 }
