@@ -13,16 +13,18 @@
         | DNI
         th
         | Monto ($)
-      tr(v-for='customer in customers').bodyColor
+      tr(v-for='customer in monthlySettlement').bodyColor
         td
         | {{customer.name}}
         td
-        | {{customer.dni}}
+        | {{customer.id}}
         td
         | {{customer.amount}}
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
+
 import { routes } from '../router'
 
 export default {
@@ -35,10 +37,22 @@ export default {
       ],
       routes
     }
+  },
+  created() {
+    this.hydrateMonthlySettlement()
+  },
+  computed: {
+    ...mapState({
+      monthlySettlement: state => state.purchases.monthlySettlement
+    })
+  },
+  methods: {
+    ...mapActions([
+      'hydrateMonthlySettlement'
+    ])
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
 th {

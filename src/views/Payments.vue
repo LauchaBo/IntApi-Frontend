@@ -43,7 +43,11 @@ export default {
   data() {
     return {
       amountBuy: '',
-      selectDropdown: [{ name: 'Escuela', value: 1 }, { name: 'Supermercado', value: 2 }, { name: 'Gimnasio', value:3 }],
+      selectDropdown: [
+        { name: 'Escuela', value: 1 },
+        { name: 'Supermercado', value: 2 },
+        { name: 'Gimnasio', value:3 }
+      ],
       amountCreditCardPayment: '',
       valueSelect: 1,
       routes
