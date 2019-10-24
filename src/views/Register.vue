@@ -131,6 +131,38 @@
         placeholder='Escribe tu nombre'
         v-if="role === 'Personal'"
       )
+      label.text-medium.m-bottom-1(v-if="role === 'Personal'")
+        | Método de pago
+      .row.middle.center.m-bottom-2(v-if="role === 'Personal'")
+        .radio.m-right-1
+          input.radio-input(
+            type='radio'
+            name='paymentMethod'
+            :value='"cbu"'
+            @click='updatePaymentMethod'
+          )
+          .radio-fill
+        label.text-small.m-right-2
+          | CBU
+        .radio.m-right-1
+          input.radio-input(
+            type='radio'
+            name='paymentMethod'
+            :value='"cash"'
+            @click='updatePaymentMethod'
+          )
+          .radio-fill
+        label.text-small
+          | Efectivo
+      label.text-medium.m-bottom-1(v-if="role === 'Personal' && useCBU")
+        | CBU
+      input.input-border.name-input.m-bottom-2(
+        type='number'
+        name='cbu'
+        @input='updateValue'
+        placeholder='0002214635678764654'
+        v-if="useCBU"
+      )
       label.text-medium.m-bottom-1
         | Contraseña
       input.input-border.name-input.m-bottom-2(
@@ -155,6 +187,11 @@
 import { mapActions } from 'vuex'
 
 export default {
+  data() {
+    return {
+      useCBU: false
+    }
+  },
   methods: {
     ...mapActions([
       'changeNewUserField',
@@ -166,6 +203,10 @@ export default {
     saveRegister() {
       this.changeNewUserField({ field: 'type', value: this.role })
       this.register()
+    },
+    updatePaymentMethod(e) {
+      this.updateValue(e)
+      e.target.value === 'cbu' ? this.useCBU = true : this.useCBU = false
     }
   },
   props: { 
