@@ -74,7 +74,6 @@ export default {
       let newUser = this.state.userInfo.newUser
       try {
         const response = await registerUser(this.state.userInfo.newUser)
-        console.log(newUser.type)
         if (!isError(response.status)) {
           commit('changeUserInfoField', { field: 'email', value: newUser.email })
           commit('changeUserInfoField', { field: 'type', value: newUser.type })

@@ -8,14 +8,11 @@
     .account-info.row.center.middle
       .card-info.column.start.middle
         p.text-medium
-          | Número de tarjeta: 
-          //- ${{ homePersonal.card.number }}
+          | Número de tarjeta: {{ homePersonal.cardNumber }}
         p.text-medium
-          | Vencimiento: 
-          //- ${{ homePersonal.card.expireDate }}
+          | Vencimiento: {{ homePersonal.expirationDate }}
         p.text-medium
-          | Código de seguridad: 
-          //- ${{ homePersonal.card.securityCode }}
+          | Código de seguridad: {{ homePersonal.securityCode }}
       .limits.column.start.middle
         p.text-medium
           | Consumos mensuales: ${{ homePersonal.total }}

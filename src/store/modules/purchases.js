@@ -23,17 +23,11 @@ export default {
     },
     async debitBanks() {
       const response = await debitBanksPurchases()
-      if (isError(response.status))
-        console.log(response)
-      else
-        return response
+      return response
     },
     async payBusinesses() {
       const response = await payBusinessesPurchases()
-      if (isError(response.status))
-        console.log(response)
-      else
-        return response
+      return response
     }
   }
 }

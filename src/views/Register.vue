@@ -154,14 +154,14 @@
           .radio-fill
         label.text-small
           | Efectivo
-      label.text-medium.m-bottom-1(v-if="role === 'Personal' && useCBU")
+      label.text-medium.m-bottom-1(v-if="(role === 'Personal' && useCBU) || role === 'Business'")
         | CBU
       input.input-border.input-border.m-bottom-2(
         type='number'
         name='cbu'
         @input='updateValue'
         placeholder='0002214635678764654'
-        v-if="useCBU"
+        v-if="useCBU || role === 'Business'"
       )
       label.text-medium.m-bottom-1
         | Contraseña
