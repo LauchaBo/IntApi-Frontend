@@ -5,7 +5,7 @@
         | Completa tu perfil
       label.text-medium.m-bottom-1
         | Nombre
-      input.input-border.name-input.m-bottom-2(
+      input.input-border.input-border.m-bottom-2(
         type='text'
         name='name'
         @input='updateValue'
@@ -13,7 +13,7 @@
       )
       label.text-medium.m-bottom-1(v-if="role === 'Personal'")
         | Apellido
-      input.input-border.name-input.m-bottom-2(
+      input.input-border.input-border.m-bottom-2(
         type='text'
         name='lastName'
         @input='updateValue'
@@ -22,7 +22,7 @@
       )
       label.text-medium.m-bottom-1(v-if="role === 'Personal'")
         | DNI
-      input.input-border.name-input.m-bottom-2(
+      input.input-border.input-border.m-bottom-2(
         type='number'
         name='customerId'
         @input='updateValue'
@@ -31,7 +31,7 @@
       )
       label.text-medium.m-bottom-1(v-if="role === 'Business'")
         | CUIT
-      input.input-border.name-input.m-bottom-2(
+      input.input-border.input-border.m-bottom-2(
         type='number'
         name='businessId'
         @input='updateValue'
@@ -40,7 +40,7 @@
       )
       label.text-medium.m-bottom-1
         | Email
-      input.input-border.name-input.m-bottom-2(
+      input.input-border.input-border.m-bottom-2(
         type='email'
         name='email'
         @input='updateValue'
@@ -48,7 +48,7 @@
       )
       label.text-medium.m-bottom-1
         | Fecha de nacimiento
-      input.input-border.name-input.m-bottom-2(
+      input.input-border.input-border.m-bottom-2(
         type='text'
         name='dateBirth'
         @input='updateValue'
@@ -59,24 +59,24 @@
           | Dirección
         label.text-medium.m-bottom-1
           | Calle
-      input.input-border.name-input.m-bottom-2(
+      input.input-border.input-border.m-bottom-2(
         type='text'
         name='street'
         @input='updateValue'
         placeholder='Calle que aparece en tu documento'
       )
-      .row.middle.center
-        label.text-medium.m-bottom-1
+      .row.middle.center.m-bottom-2
+        label.text-medium.m-right-1
           | Número
-        input.input-border.name-input.m-bottom-2(
+        input.input-border.input-border.m-right-2(
           type='text'
           name='number'
           @input='updateValue'
           placeholder='1356'
         )
-        label.text-medium.m-bottom-1
+        label.text-medium.m-right-1
           | Dpto
-        input.input-border.name-input.m-bottom-2(
+        input.input-border.input-border(
           type='text'
           name='apartment'
           @input='updateValue'
@@ -84,7 +84,7 @@
         )
       label.text-medium.m-bottom-1
         | Código postal
-      input.input-border.name-input.m-bottom-2(
+      input.input-border.input-border.m-bottom-2(
         type='number'
         name='postalCode'
         @input='updateValue'
@@ -92,7 +92,7 @@
       )
       label.text-medium.m-bottom-1
         | País
-      input.input-border.name-input.m-bottom-2(
+      input.input-border.input-border.m-bottom-2(
         type='text'
         name='country'
         @input='updateValue'
@@ -100,7 +100,7 @@
       )
       label.text-medium.m-bottom-1
         | Provincia
-      input.input-border.name-input.m-bottom-2(
+      input.input-border.input-border.m-bottom-2(
         type='text'
         name='province'
         @input='updateValue'
@@ -108,7 +108,7 @@
       )
       label.text-medium.m-bottom-1
         | Ciudad
-      input.input-border.name-input.m-bottom-2(
+      input.input-border.input-border.m-bottom-2(
         type='text'
         name='city'
         @input='updateValue'
@@ -116,19 +116,19 @@
       )
       label.text-medium.m-bottom-1
         | Teléfono
-      input.input-border.name-input.m-bottom-2(
+      input.input-border.input-border.m-bottom-2(
         type='text'
         name='phone'
         @input='updateValue'
         placeholder='0111523658416'
       )
-      label.text-medium.m-bottom-1(v-if="role === 'Personal'")
+      label.title-small.m-bottom-1(v-if="role === 'Personal'")
         | Ingresos
-      input.input-border.name-input.m-bottom-2(
+      input.input-border.input-border.m-bottom-2(
         type='number'
         name='income'
         @input='updateValue'
-        placeholder='Escribe tu nombre'
+        placeholder='Escribe tu sueldo neto'
         v-if="role === 'Personal'"
       )
       label.text-medium.m-bottom-1(v-if="role === 'Personal'")
@@ -156,7 +156,7 @@
           | Efectivo
       label.text-medium.m-bottom-1(v-if="role === 'Personal' && useCBU")
         | CBU
-      input.input-border.name-input.m-bottom-2(
+      input.input-border.input-border.m-bottom-2(
         type='number'
         name='cbu'
         @input='updateValue'
@@ -165,7 +165,7 @@
       )
       label.text-medium.m-bottom-1
         | Contraseña
-      input.input-border.name-input.m-bottom-2(
+      input.input-border.input-border.m-bottom-2(
         type='password'
         name='password'
         @input='updateValue'
@@ -173,7 +173,7 @@
       )
       label.text-medium.m-bottom-1
         | Repetir contraseña
-      input.input-border.name-input.m-bottom-2(
+      input.input-border.input-border.m-bottom-2(
         type='password'
         name='confirmPassword'
         @input='updateValue'

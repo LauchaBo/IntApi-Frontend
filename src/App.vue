@@ -17,7 +17,7 @@ export default {
 @import './scss/variables/sizes';
 
 .main-container {
-  min-height: calc(100vh - #{$footer-height});
+  min-height: calc(100vh);
   padding-top: $navbar-height;
   width: 100%;
 }

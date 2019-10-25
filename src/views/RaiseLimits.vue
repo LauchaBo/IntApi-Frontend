@@ -1,6 +1,8 @@
 <template lang="pug">
   .column.center.middle
     .register-container.column.start.middle
+      router-link.main-button.self-start.m-left-3(:to='{ name: routes.homePersonal }')
+        | Volver
       h1.title-big.m-bottom-3
         | Elige la tarjeta a la que quieres aplicar:
         .row.middle.center.m-top-5
@@ -31,11 +33,14 @@
 </template>
 
 <script>
+import { routes } from '../router'
+
 export default {
   data() {
     return {
       cardName: 'Platinum',
-      newIncome: ''
+      newIncome: '',
+      routes
     }
   }
 }
