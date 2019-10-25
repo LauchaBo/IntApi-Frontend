@@ -1,22 +1,31 @@
 <template lang="pug">
-  .login-container.column.center
+  .homePersonal-container.column.center
     router-link.main-button.self-start.m-left-3(:to='{ name: routes.landing }')
       | Volver
     .jumbotron
       h1.title-xbig
         | Estado personal
-    router-link.main-button(:to='{ name: routes.raiseLimits }')
-        | Aumentar mis límites &raquo
-    .row
-      .column.m-right-5
-        | Consumos mensuales: ${{ homePersonal.total }}
-      .column.m-right-5
-        .row
+    .account-info.row.center.middle
+      .card-info.column.start.middle
+        p.text-medium
+          | Número de tarjeta: 
+          //- ${{ homePersonal.card.number }}
+        p.text-medium
+          | Vencimiento: 
+          //- ${{ homePersonal.card.expireDate }}
+        p.text-medium
+          | Código de seguridad: 
+          //- ${{ homePersonal.card.securityCode }}
+      .limits.column.start.middle
+        p.text-medium
+          | Consumos mensuales: ${{ homePersonal.total }}
+        p.text-medium
           | Límite total: ${{ homePersonal.limit }}
-        .row 
+        p.text-medium 
           | Límite en cuotas: ${{ homePersonal.financiedlimit }}
-      .column.m-right-5
-    h1.title-big.self-start.m-bottom-5.m-top-5
+      router-link.main-button(:to='{ name: routes.raiseLimits }')
+        | Aumentar mis límites &raquo
+    h1.title-big.m-bottom-5.m-top-5
      | Historial de consumo
     table.headColor
       tr
@@ -91,5 +100,11 @@ tr {
 }
 tr:hover{
   background-color: #9D9D9D;
+}
+
+.account-info {
+  &>*{
+    min-width: 300px;
+  }
 }
 </style>

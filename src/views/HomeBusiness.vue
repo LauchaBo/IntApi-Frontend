@@ -1,5 +1,5 @@
 <template lang="pug">
-  .login-container.column.center
+  .homeBusiness-container.column.center
     router-link.main-button.self-start.m-left-3(:to='{ name: routes.landing }')
       | Volver
     .jumbotron
@@ -8,7 +8,7 @@
       .column.m-right-5
         .row
           | Operaciones mensuales: {{ homeBusiness.sales }}
-    h1.title-big.self-start.m-bottom-5.m-top-5
+    h1.title-big.m-bottom-5.m-top-5
       | Historial de ventas
     table.headColor
       tr

@@ -2,9 +2,14 @@
   .login-container.column.center
     router-link.main-button.self-start.m-left-3(:to='{ name: routes.landing }')
       | Volver
-    .login.column.start.middle
-      h1.title-xbig
+    .login.column.center.middle
+      h1.title-xbig.m-bottom-3
         | Estado actual
+      .row.center.middle
+        button.main-button.m-right-3(type='button' @click='callDebitBanks')
+          | Debitar de bancos
+        button.main-button(type='button' @click='callPayBusinesses')
+          | Pagar negocios
     table.headColor
       tr
         th
@@ -43,8 +48,16 @@ export default {
   },
   methods: {
     ...mapActions([
-      'hydrateMonthlySettlement'
-    ])
+      'hydrateMonthlySettlement',
+      'debitBanks',
+      'payBusinesses'
+    ]),
+    callDebitBanks() {
+      this.debitBanks()
+    },
+    callPayBusinesses() {
+      this.payBusinesses()
+    }
   }
 }
 </script>
