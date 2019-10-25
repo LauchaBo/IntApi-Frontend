@@ -23,7 +23,9 @@ export default {
       city: '',
       phone: '',
       income: '',
-      password: ''
+      password: '',
+      paymentMethod: '',
+      cbu: ''
     }
   },
 
