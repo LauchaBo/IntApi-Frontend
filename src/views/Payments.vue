@@ -1,6 +1,6 @@
 <template lang="pug">
   .login-container.column.center.middle
-    router-link.main-button(:to='{ name: routes.landing }')
+    router-link.main-button.self-start.m-left-3(:to='{ name: routes.landing }')
       | Volver
     .login.column.start.middle
       h1.title-xbig

@@ -5,8 +5,11 @@
         img.icon.m-right-1(src='../assets/logo.png' alt='Kimple')
         span.title-big
           | CreditAr
-    router-link.main-button(type='button' :to='"/login"')
-      | Ingresar
+    .row.center.middle
+      router-link.text-big.blue.m-right-2(:to='{ name: routes.monthlySettlement }')
+        | Liquidación
+      router-link.main-button(:to='{ name: routes.login }')
+        | Ingresar
 </template>
 
 <script>
