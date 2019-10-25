@@ -8,13 +8,11 @@ export const getMonthlySettlement = async () => {
 }
 
 export const debitBanksPurchases = async () => {
-  console.log('debitBanks')
-  const response = await api.post()
+  const response = await api.get(`${userBaseEndpoint}/GetSummary`)
   return response
 }
 
 export const payBusinessesPurchases = async () => {
-  console.log('payBusinesses')
-  const response = await api.post()
+  const response = await api.get(`${userBaseEndpoint}/getSumPamts`)
   return response
 }
